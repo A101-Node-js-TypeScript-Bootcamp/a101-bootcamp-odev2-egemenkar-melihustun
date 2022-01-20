@@ -8,15 +8,10 @@ exports.fetchBrand = async (req, res) => {
   })
 }
 
-exports.fetchCategories = async (req, res) => {
-  const response = await brandService.fetchCategories()
+exports.fetchSingleBrand = async (req, res) => {
+  const response = await brandService.fetchSingleBrand(req.params.name)
   res.send({
     status: true,
-    data: response.categories,
-  })
-}
-
-exports.singleFetchCategory = async (req, res) => {
-  const response = await brandService.singleFetchCategory(req.params.id)
-  res.send(response)
+    data: response,
+  });
 }

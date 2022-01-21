@@ -1,21 +1,7 @@
-const express = require('express')
-let router = express.Router()
-let userController = require('../../controllers/User')
-const { authSchema } = require('../../helpers/joiValidation')
+const express = require("express");
+let router = express.Router();
+let userController = require("../../controllers/User");
 
-router.post(
-  '/login',
-  async (req, res, next) => {
-    try {
-      const { email, password } = req.body
-      const result = await authSchema.validateAsync(req.body)
-      next()
-    } catch (error) {
-      if (error.isJoi === true) error.status = 422
-      next(error)
-    }
-  },
-  userController.login
-)
+router.post("/login", userController.joiValidate, userController.login);
 
-module.exports = router
+module.exports = router;

@@ -19,7 +19,7 @@ exports.singleFetchCategory = async (categoryId) => {
   } catch {
     return {
       status: false,
-      message: 'böyle bir data mebcut değil',
+      message: 'böyle bir data mevcut değil',
     }
   }
 }

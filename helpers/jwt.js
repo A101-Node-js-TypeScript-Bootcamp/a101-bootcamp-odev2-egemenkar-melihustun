@@ -1,11 +1,13 @@
-const expressJwt = require("express-jwt");
+const expressJwt = require('express-jwt')
 
-const secret = "62csdfhsdhshsfgh";
+//The secret definition is a unique  ,
+//Keep it private for security!!!
+const secret = '62csdfhsdhshsfgh'
 
 function jwt() {
-  return expressJwt({ secret, algorithms: ["HS256"] }).unless({
-    path: ["/api/user/login"],
-  });
+  return expressJwt({ secret, algorithms: ['HS256'] }).unless({
+    path: ['/api/user/login'],
+  })
 }
 
-module.exports = jwt;
+module.exports = jwt

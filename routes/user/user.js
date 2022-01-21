@@ -1,7 +1,8 @@
-const express = require("express");
-let router = express.Router();
-let userController = require("../../controllers/User");
+const express = require('express')
+let router = express.Router()
+let userController = require('../../controllers/User')
 
-router.post("/login", userController.joiValidate, userController.login);
+//We use the joiValidate path as middleware for data validation.
+router.post('/login', userController.joiValidate, userController.login)
 
-module.exports = router;
+module.exports = router

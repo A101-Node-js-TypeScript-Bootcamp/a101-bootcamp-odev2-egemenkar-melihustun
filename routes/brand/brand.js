@@ -3,10 +3,8 @@ let router = express.Router()
 
 let brandController = require('../../controllers/brand')
 
+//We define it as ':name' to redirect to a single brand in the brand route
 router.get('/', brandController.fetchBrand)
-router.get("/:name", brandController.fetchSingleBrand)
+router.get('/:name', brandController.fetchSingleBrand)
 
 module.exports = router
-
-
-//https://api.trendyol.com/sapigw/brands/by-name?name={brand-name}

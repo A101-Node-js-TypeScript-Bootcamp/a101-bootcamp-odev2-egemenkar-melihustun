@@ -9,7 +9,7 @@ router.post(
     try {
       const { email, password } = req.body
       const result = await authSchema.validateAsync(req.body)
-      console.log(result)
+      next()
     } catch (error) {
       if (error.isJoi === true) error.status = 422
       next(error)
